@@ -8,16 +8,19 @@ import {
   TableHead,
   TableRow,
   Paper,
-} from "@mui/material";
-import { appStatus } from "./AppStatus";
+} from "@mui/material"; //Importing Table components from MUI
+import { appStatus } from "./AppStatus"; // Importing appStatus function
 import dots from "../../../assets/DotsVertical.png";
 import zepplin from "../../../assets/Zepplin.png";
 import figma from "../../../assets/Figma.png";
 import meta from "../../../assets/Meta.png";
 import angular from "../../../assets/Angular.png";
 import vue from "../../../assets/Vue.png";
+import Left from "../../../assets/arrow-left.png";
+import Right from "../../../assets/arrow-right.png";
 
 const InstalledApps = ({ data }) => {
+  // Function to render icon based on index
   const renderIcon = (index) => {
     if (index === 0) {
       return zepplin;
@@ -34,8 +37,6 @@ const InstalledApps = ({ data }) => {
     }
   };
 
-  
-
   return (
     <Box
       sx={{
@@ -45,6 +46,7 @@ const InstalledApps = ({ data }) => {
         borderRadius: "12px",
       }}
     >
+      {/* Header Section */}
       <Box
         sx={{
           bgcolor: "white",
@@ -72,6 +74,9 @@ const InstalledApps = ({ data }) => {
           <img src={dots} alt="dots" />
         </Button>
       </Box>
+
+      {/* Table Section */}
+
       <TableContainer component={Paper}>
         <Table>
           <TableHead>
@@ -189,7 +194,8 @@ const InstalledApps = ({ data }) => {
                       display: "inline-block",
                     }}
                   >
-                    {appStatus(row.status)}
+                    {appStatus(row.status)}{" "}
+                    {/* Using appStatus function to render status */}
                   </Box>
                 </TableCell>
                 <TableCell
@@ -230,6 +236,41 @@ const InstalledApps = ({ data }) => {
           </TableBody>
         </Table>
       </TableContainer>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        height="30px"
+        padding={"10px"}
+      >
+        <span
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            gap: "8px",
+          }}
+        >
+          <img
+            src={Left}
+            alt="source icon"
+            style={{ marginRight: "0px", verticalAlign: "middle" }}
+          />
+          <Typography
+            sx={{
+              fontSize: "15px",
+              color: "rgba(40, 40, 40, 1)",
+            }}
+          >
+            1/15
+          </Typography>
+          <img
+            src={Right}
+            alt="source icon"
+            style={{ marginRight: "0px", verticalAlign: "middle" }}
+          />
+        </span>
+      </Box>
     </Box>
   );
 };

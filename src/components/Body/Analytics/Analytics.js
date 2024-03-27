@@ -6,7 +6,7 @@ import { useTheme } from "@mui/material/styles";
 
 const Analytics = () => {
   const theme = useTheme();
-  const isPhoneSize = useMediaQuery(theme.breakpoints.down("sm"));
+  const isPhoneSize = useMediaQuery(theme.breakpoints.down("sm")); // Checking if screen size is for phone
 
   return (
     <div

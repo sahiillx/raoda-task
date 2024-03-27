@@ -1,6 +1,8 @@
 import { Box, Typography, Button } from "@mui/material";
-import styled from "styled-components";
+import styled from "styled-components"; // Importing styled-components library
 
+//SC = styled-components
+//SC for main-box
 export const StyledBox = styled(Box)`
   background-color: white;
   margin: 12px 0;
@@ -8,6 +10,7 @@ export const StyledBox = styled(Box)`
   border-radius: 12px;
 `;
 
+//SC for header-box
 export const HeaderBox = styled(Box)`
   background-color: white;
   padding: 8px 16px;
@@ -20,6 +23,7 @@ export const HeaderBox = styled(Box)`
   border-bottom: 2px solid #eaecf0;
 `;
 
+//SC for title-typography
 export const TitleTypography = styled(Typography)`
   font-family: Inter, sans-serif;
   font-weight: 600;
@@ -27,15 +31,17 @@ export const TitleTypography = styled(Typography)`
   color: rgba(40, 40, 40, 1);
 `;
 
+//SC for content-box
 export const StyledButton = styled(Button)`
   padding: 0;
   min-width: auto;
 `;
-
+//SC for content-box
 export const ContentBox = styled(Box)`
   padding: 8px 0;
 `;
 
+//SC for image
 export const StyledImage = styled.img`
   width: 100%;
 `;

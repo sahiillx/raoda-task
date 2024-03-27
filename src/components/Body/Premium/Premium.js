@@ -1,4 +1,6 @@
 import { React } from "react";
+
+//Importing assests
 import Box from "@mui/material/Box";
 import Card from "@mui/material/Card";
 import CardActions from "@mui/material/CardActions";
@@ -8,9 +10,11 @@ import Typography from "@mui/material/Typography";
 import { Grid } from "@mui/material";
 import bolt from "../../../assets/bolt.png";
 
+//Functional component for HeaderCard
 export default function HeaderCard() {
   return (
     <Box>
+      {/* Card component */}
       <Card
         variant="outlined"
         sx={{
@@ -22,6 +26,7 @@ export default function HeaderCard() {
           mb: 4,
         }}
       >
+        {/* Grid container */}
         <Grid container alignItems="center" justifyContent="space-between">
           <Grid item xs={12} sm={6}>
             <CardContent
@@ -29,6 +34,7 @@ export default function HeaderCard() {
                 textAlign: { xs: "center", sm: "initial" },
               }}
             >
+              {/* Title */}
               <Typography
                 sx={{
                   fontSize: 28,
@@ -42,6 +48,7 @@ export default function HeaderCard() {
               >
                 Unlock premium stats
               </Typography>
+              {/* Subtitle */}
               <Typography
                 sx={{
                   fontSize: 14,
@@ -55,6 +62,8 @@ export default function HeaderCard() {
               </Typography>
             </CardContent>
           </Grid>
+
+          {/* Grid item for action button */}
           <Grid item xs={12} sm={6}>
             <CardActions
               sx={{ justifyContent: { xs: "center", sm: "flex-end" } }}

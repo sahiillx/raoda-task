@@ -2,7 +2,16 @@ import { React, useState } from "react";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
 import List from "@mui/material/List";
+
+//Importing assests
+import FriendsIcon from "../../assets/user.png";
 import ListItem from "@mui/material/ListItem";
+import AppIcon from "../../assets/app-icon.png";
+import HelpCenter from "../../assets/Support.png";
+import FileManager from "../../assets/Folder.png";
+import Setting from "../../assets/Settings.png";
+import Logout from "../../assets/logout.png";
+import Globe from "../../assets/globe.png";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
@@ -13,18 +22,16 @@ import ExpandLessIcon from "@mui/icons-material/ExpandLess";
 import Branding from "../../assets/clonify.png";
 import DashboardIcon from "../../assets/Stats.png";
 import MessagesIcon from "../../assets/emailmessages.png";
-import FriendsIcon from "../../assets/user.png";
-import AppIcon from "../../assets/app-icon.png";
-import HelpCenter from "../../assets/Support.png";
-import FileManager from "../../assets/Folder.png";
 
-const drawerWidth = 240;
+const drawerWidth = 240; // Define drawer width
 
 function Sidebar(props) {
   const { window } = props;
-  const [activeItem, setActiveItem] = useState(null);
-  const [activeSubItem, setActiveSubItem] = useState(null);
+  const [activeItem, setActiveItem] = useState(null); // State to track active item
+
+  const [activeSubItem, setActiveSubItem] = useState(null); // State to track active sub-item
   const [openItems, setOpenItems] = useState({
+    // State to track open items
     dashboard: false,
     messages: false,
     friends: false,
@@ -33,6 +40,7 @@ function Sidebar(props) {
     file_manager: false,
   });
 
+  // Function to handle click on list item
   const handleItemClick = (item) => {
     setActiveItem(item);
     setActiveSubItem(null);
@@ -42,10 +50,13 @@ function Sidebar(props) {
     }));
   };
 
+  // Function to handle click on sub-list item
   const handleSubItemClick = (subItem) => {
     setActiveSubItem(subItem);
   };
 
+
+  // Sidebar drawer
   const drawer = (
     <div style={{ width: { drawerWidth } }}>
       <Toolbar>
@@ -84,7 +95,7 @@ function Sidebar(props) {
             {
               key: "friends",
               text: "Friends",
-              subItems: ["Alex", "John", "Amanda",],
+              subItems: ["Alex", "John", "Amanda"],
             },
             {
               key: "app",
@@ -269,6 +280,37 @@ function Sidebar(props) {
           ))}
         </List>
       </List>
+      {/* Footer */}
+
+      <Box
+        sx={{
+          p: 2,
+          borderTop: "1px solid #EAECF0",
+          display: "flex",
+          alignItems: "bottom",
+          justifyContent: "space-between",
+          textAlign: "center",
+          position: "fixed",
+          bottom: 0,
+          width: "208px",
+        }}
+      >
+        <img
+          src={Setting}
+          alt="source icon"
+          style={{ marginRight: "0px", verticalAlign: "middle" }}
+        />
+        <img
+          src={Logout}
+          alt="source icon"
+          style={{ marginRight: "0px", verticalAlign: "middle" }}
+        />
+        <img
+          src={Globe}
+          alt="source icon"
+          style={{ marginRight: "0px", verticalAlign: "middle" }}
+        />
+      </Box>
     </div>
   );
 

@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from "react";
 
-
+// Importing assets
 import PerformanceGraph from "../../../assets/Axis.png";
 import PerformanceGraph1 from "../../../assets/Axis-1.png";
 import title from "../../../assets/Legend.png";
 import titlesmall from "../../../assets/Legend1.png";
-import dots from "../../../assets/DotsVertical.png";
-import { StyledBox, HeaderBox, TitleTypography, StyledButton, ContentBox, StyledImage } from "./PerformanceStyled";
 
+// Importing styled components
+import {
+  StyledBox,
+  HeaderBox,
+  TitleTypography,
+  ContentBox,
+  StyledImage,
+} from "./PerformanceStyled";
 
-
+// Functional component for Performance
 const Performance = () => {
+
+  //Detecting mobile view
   const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 600); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth < 600);
     };
 
     handleResize(); // Check on initial render
-    window.addEventListener("resize", handleResize); // Add event listener for resize
+    window.addEventListener("resize", handleResize); 
 
     return () => {
       window.removeEventListener("resize", handleResize); // Cleanup
@@ -30,9 +38,6 @@ const Performance = () => {
     <StyledBox>
       <HeaderBox>
         <TitleTypography>Performance</TitleTypography>
-        <StyledButton>
-          <img src={dots} alt="dots" />
-        </StyledButton>
       </HeaderBox>
       <ContentBox>
         <StyledImage

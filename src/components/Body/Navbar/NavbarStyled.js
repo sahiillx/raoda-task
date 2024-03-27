@@ -1,6 +1,7 @@
 import { styled, alpha } from "@mui/material/styles";
 import InputBase from "@mui/material/InputBase";
 
+// Styled component for search container
 export const Search = styled("div")(({ theme }) => ({
   position: "relative",
   borderRadius: "6px",
@@ -14,6 +15,7 @@ export const Search = styled("div")(({ theme }) => ({
   width: "100%",
 }));
 
+//custom InputBase  component
 export const StyledInputBase = styled(InputBase)(({ theme }) => ({
   color: "rgba(157, 159, 161, 1)",
   fontFamily: "Inter , sans-serif",
@@ -26,6 +28,8 @@ export const StyledInputBase = styled(InputBase)(({ theme }) => ({
     width: "100%",
   },
 }));
+
+//Icon Wrapper
 export const SearchIconWrapper = styled("div")(({ theme }) => ({
   padding: theme.spacing(0, 2),
   height: "100%",

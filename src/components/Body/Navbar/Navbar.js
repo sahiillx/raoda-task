@@ -12,17 +12,19 @@ import avatar from "../../../assets/Avatar.png";
 import appicon from "../../../assets/app-icon.png";
 import { Search, SearchIconWrapper, StyledInputBase } from "./NavbarStyled";
 
+// Functional component for Navbar
 export default function Navbar() {
   const [anchorEl, setAnchorEl] = useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = useState(null);
   const [isMobile, setIsMobile] = useState(false);
 
+  // Effect hook to detect mobile view
   useEffect(() => {
     const handleResize = () => {
-      setIsMobile(window.innerWidth < 600); // Adjust the breakpoint as needed
+      setIsMobile(window.innerWidth < 600);
     };
 
-    handleResize(); // Check on initial render
+    handleResize();
     window.addEventListener("resize", handleResize); // Add event listener for resize
 
     return () => {
@@ -31,8 +33,10 @@ export default function Navbar() {
   }, []);
 
   const isMenuOpen = Boolean(anchorEl);
+  // Check if mobile menu is open
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+  // Function to close mobile menu
   const handleMobileMenuClose = () => {
     setMobileMoreAnchorEl(null);
   };
@@ -42,10 +46,12 @@ export default function Navbar() {
     handleMobileMenuClose();
   };
 
+  // Function to open mobile menu
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
 
+  // Render main menu
   const menuId = "primary-search-account-menu";
   const renderMenu = (
     <Menu
@@ -68,6 +74,7 @@ export default function Navbar() {
     </Menu>
   );
 
+  // Render mobile menu
   const mobileMenuId = "primary-search-account-menu-mobile";
   const renderMobileMenu = isMobile ? (
     <Menu
@@ -106,6 +113,7 @@ export default function Navbar() {
     </Menu>
   ) : null;
 
+  // Width of drawer for non-mobile view
   const drawerWidth = 240;
 
   return (
@@ -120,6 +128,7 @@ export default function Navbar() {
         }}
       >
         <Toolbar>
+          {/* Search Box */}
           <Search>
             <SearchIconWrapper>
               <SearchIcon sx={{ color: "rgba(40,40,40,1)", fontSize: 22 }} />

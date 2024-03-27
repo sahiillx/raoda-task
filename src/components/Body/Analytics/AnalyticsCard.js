@@ -1,8 +1,8 @@
 import React from "react";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Typography from "@mui/material/Typography";
-import { Box } from "@mui/material";
+import Card from "@mui/material/Card"; // Importing Card component
+import CardContent from "@mui/material/CardContent"; // Importing CardContent component
+import Typography from "@mui/material/Typography"; // Importing Typography component
+import { Box } from "@mui/material"; // Importing Box component
 
 const AnalyticsCard = ({ heading, subheading, profitLoss, text, index }) => {
   return (
@@ -33,7 +33,7 @@ const AnalyticsCard = ({ heading, subheading, profitLoss, text, index }) => {
               marginBottom: "8px",
             }}
           >
-            {heading}
+            {heading} {/* Displaying heading */}
           </Typography>
           <Typography
             variant="h5"
@@ -43,7 +43,7 @@ const AnalyticsCard = ({ heading, subheading, profitLoss, text, index }) => {
               marginBottom: "16px",
             }}
           >
-            {subheading}
+            {subheading} {/* Displaying subheading */}
           </Typography>
           <Box sx={{ display: "flex", alignItems: "center" }}>
             <Box
@@ -75,6 +75,7 @@ const AnalyticsCard = ({ heading, subheading, profitLoss, text, index }) => {
                 {profitLoss !== 0 && (profitLoss > 0 ? "+" : "-")}
                 {Math.abs(profitLoss)}%
               </Typography>
+              
             </Box>
             <Typography
               sx={{ fontSize: "12px", color: "rgba(157, 159, 161, 1)" }}

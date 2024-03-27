@@ -10,15 +10,19 @@ import InstalledApps from "./components/Body/InstalledApps/InstalledApps";
 import { data } from "./data/constants";
 import "./App.css";
 
+// SC = Styled components
+// SC for Paper
 const StyledPaper = styled(Paper)`
   padding: 20px;
   min-height: 100vh;
 `;
 
+//SC for main-box
 const MainBox = styled(Box)`
   display: flex;
 `;
 
+//SC for main-content
 const MainContent = styled(Box)`
   flex-grow: 1;
   padding: 1px;
@@ -30,7 +34,6 @@ const MainContent = styled(Box)`
 `;
 
 function App() {
-
   return (
     <StyledPaper
       style={{
@@ -46,6 +49,7 @@ function App() {
           <HeaderCard />
           <Analytics />
           <Performance />
+          {/* Render InstalledApps component and pass data prop */}
           <InstalledApps data={data} />
         </MainContent>
       </MainBox>

@@ -1,4 +1,6 @@
 import { Box } from "@mui/material";
+
+// Function to render a status  based on the status of the app.
 export const appStatus = (status) => {
   switch (status) {
     case "Active":
@@ -50,6 +52,6 @@ export const appStatus = (status) => {
         </Box>
       );
     default:
-      return null;
+      return null; // Handle cases where the status doesn't match any options
   }
 };
