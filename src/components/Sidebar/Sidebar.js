@@ -55,7 +55,6 @@ function Sidebar(props) {
     setActiveSubItem(subItem);
   };
 
-
   // Sidebar drawer
   const drawer = (
     <div style={{ width: { drawerWidth } }}>
@@ -203,9 +202,13 @@ function Sidebar(props) {
             {
               key: "help_center",
               text: "Help Center",
-              subItems: ["Facebook", "Instagram", "Whatsapp"],
+              subItems: ["FAQs", "Privacy Policy", "Contact Us"],
             },
-            { key: "file_manager", text: "File Manager", subItems: [] },
+            {
+              key: "file_manager",
+              text: "File Manager",
+              subItems: ["Recents File", "Upload", "Recycle Bin"],
+            },
           ].map((item) => (
             <div key={item.key}>
               <ListItem disablePadding>
@@ -253,7 +256,7 @@ function Sidebar(props) {
                       <ListItemButton
                         selected={activeSubItem === subItem}
                         onClick={() => handleSubItemClick(subItem)}
-                        sx={{ pl: 4 }}
+                        sx={{ pl: 9 }}
                       >
                         <ListItemText
                           primary={subItem}
