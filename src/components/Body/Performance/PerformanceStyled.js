@@ -11,6 +11,7 @@ export const StyledBox = styled(Box)`
 export const HeaderBox = styled(Box)`
   background-color: white;
   padding: 8px 16px;
+  padding-right: 0;
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
   display: flex;
